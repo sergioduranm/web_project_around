@@ -15,14 +15,6 @@
   max-width: 880px;
   min-width: 320px;
   margin: 0px auto;
-}
-
-.page {
-  display: flex;
-  flex-direction: column;
-  max-width: 880px;
-  min-width: 320px;
-  margin: 0px auto;
   padding: 0;
 }
 
