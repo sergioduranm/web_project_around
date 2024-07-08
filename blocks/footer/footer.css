@@ -1,0 +1,10 @@
+/* Bloque footer */
+.footer {
+  margin: 67px auto 60px 0px;
+  color: #545454;
+}
+
+.footer__text {
+  font-size: 18px;
+  line-height: 21px;
+}

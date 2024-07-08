@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Around the U.S.</title>
+    <link rel="stylesheet" href="./pages/index.css" />
+  </head>
+  <body class="body">
+    <div class="page">
+      <header class="header">
+        <img
+          class="header__logo"
+          src="./images/Logo-around-us.svg"
+          alt="Around The U.S."
+        />
+        <div class="header__line"></div>
+      </header>
+
+      <main class="main-content">
+        <section class="user-profile">
+          <img
+            class="user-profile__image"
+            src="./images/user-image.jpg"
+            alt="Jacques Cousteau"
+          />
+          <div class="user-profile__info">
+            <h2 class="user-profile__name">Jacques Cousteau</h2>
+            <p class="user-profile__role">Explorador</p>
+            <button class="edit-profile-button">
+              <img src="./images/Edit-Button.svg" alt="Edit Profile" />
+            </button>
+          </div>
+
+          <button class="add-photo-button">
+            <img src="./images/Add Button.svg" alt="Add Photo" />
+          </button>
+        </section>
+
+        <section class="photo-cards">
+          <div class="photo-card">
+            <img
+              class="photo-card__image"
+              src="./images/yosemit.png"
+              alt="Valle de Yosemite"
+            />
+            <div class="photo-card__title">
+              Valle de Yosemite Yosemite Yosemite
+            </div>
+            <button class="photo-card__like"></button>
+          </div>
+          <div class="photo-card">
+            <img
+              class="photo-card__image"
+              src="./images/louise.png"
+              alt="Lago Louise"
+            />
+            <div class="photo-card__title">Lago Louise</div>
+            <button class="photo-card__like"></button>
+          </div>
+          <div class="photo-card">
+            <img
+              class="photo-card__image"
+              src="./images/montanas-calvas.png"
+              alt="Montañas Calvas"
+            />
+            <div class="photo-card__title">Montañas Calvas</div>
+            <button class="photo-card__like"></button>
+          </div>
+          <div class="photo-card">
+            <img
+              class="photo-card__image"
+              src="./images/latemar.png"
+              alt="Latemar"
+            />
+            <div class="photo-card__title">Latemar</div>
+            <button class="photo-card__like"></button>
+          </div>
+          <div class="photo-card">
+            <img
+              class="photo-card__image"
+              src="./images/national-park.png"
+              alt="Vanois National"
+            />
+            <div class="photo-card__title">
+              Vanois National Park and something more
+            </div>
+            <button class="photo-card__like"></button>
+          </div>
+          <div class="photo-card">
+            <img
+              class="photo-card__image"
+              src="./images/di-braies.png"
+              alt="Lago di Braies"
+            />
+            <div class="photo-card__title">Lago di Braies</div>
+            <button class="photo-card__like"></button>
+          </div>
+        </section>
+      </main>
+      <footer class="footer">
+        <p class="footer__text">© 2021 Around The U.S.</p>
+      </footer>
+    </div>
+    <div class="profile-modal" id="profileModal">
+      <div class="profile-modal__content">
+        <button class="profile-modal__close-btn" id="closeProfileModalBtn">
+          <img src="./images/Close Icon.png" alt="close" />
+        </button>
+        <h2 class="profile-modal__title">Editar perfil</h2>
+        <form class="profile-modal__form">
+          <div class="profile-modal__form-group">
+            <label for="name" class="profile-modal__label">Nombre</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              class="profile-modal__input"
+              placeholder="Nombre"
+            />
+          </div>
+          <div class="profile-modal__form-group">
+            <label for="about" class="profile-modal__label">Acerca de mí</label>
+            <input
+              type="text"
+              id="about"
+              name="about"
+              class="profile-modal__input"
+              placeholder="Acerca de mí"
+            />
+          </div>
+          <button type="submit" class="profile-modal__submit-btn">
+            Guardar
+          </button>
+        </form>
+      </div>
+    </div>
+    <script src="./blocks/profile-modal/profile-modal.js"></script>
+  </body>
+</html>

@@ -1,0 +1,47 @@
+.photo-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 17px;
+  justify-content: center;
+  color: black;
+}
+
+.photo-card {
+  width: 282px;
+  height: 361px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  position: relative;
+}
+
+.photo-card__image {
+  width: 282px;
+  height: 282px;
+  object-fit: cover;
+}
+
+.photo-card__title {
+  padding: 25px 40px 31px 21px;
+  font-size: 24px;
+  font-weight: 900;
+  line-height: 29.05px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.photo-card__like {
+  background-image: url("../../images/heart-off.svg");
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  width: 21px;
+  height: 19px;
+  position: absolute;
+  bottom: 30px;
+  right: 18px;
+}
