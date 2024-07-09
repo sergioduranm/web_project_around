@@ -1,10 +1,7 @@
 @import url("../vendor/normalize.css");
-@import url("../blocks/header/header.css");
-@import url("../blocks/user-profile/user-profile.css");
-@import url("../blocks/edit-profile-button/edit-profile-button.css");
-@import url("../blocks/add-photo-button/add-photo-button.css");
-@import url("../blocks/profile-edit-modal/profile-edit-modal.css");
-@import url("../blocks/photo-card/photo-card.css");
-@import url("../blocks/footer/footer.css");
-@import url("../blocks/page/page.css");
-@import url("../blocks/profile-modal/profile-modal.css");
+@import url("../blocks/header.css");
+@import url("../blocks/user-profile.css");
+@import url("../blocks/photo-card.css");
+@import url("../blocks/footer.css");
+@import url("../blocks/page.css");
+@import url("../blocks/profile-modal.css");
