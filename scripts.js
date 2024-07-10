@@ -45,8 +45,9 @@ function actionProfileModal() {
 // ------------------------------------------------------------------------------------------------------
 // Eventos
 
-profileModalForm.addEventListener("submit", submitProfileModal);
 inputName.addEventListener("input", changeColor);
 inputJob.addEventListener("input", changeColor);
+profileModalForm.addEventListener("submit", submitProfileModal);
 editProfileButton.addEventListener("click", actionProfileModal);
 closeProfileButton.addEventListener("click", actionProfileModal);
+profileModalForm.addEventListener("submit", actionProfileModal);
