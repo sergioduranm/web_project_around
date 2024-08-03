@@ -35,13 +35,41 @@
 }
 
 .photo-card__like {
-  background-image: url("../../images/heart-off.svg");
+  background-image: url("../images/heart-off.svg");
+  cursor: pointer;
+  background-color: transparent;
+  border: black;
+  width: 21px;
+  height: 19px;
+  position: absolute;
+  bottom: 30px;
+  right: 18px;
+}
+
+.photo-card__like_on {
+  background-image: url("../images/heart-on.svg");
+  cursor: pointer;
+  background-color: transparent;
+  border: black;
+  width: 21px;
+  height: 19px;
+  position: absolute;
+  bottom: 30px;
+  right: 18px;
+}
+
+.photo-card__delete {
+  background-image: url("../images/Trash.svg");
   cursor: pointer;
   background-color: transparent;
   border: none;
   width: 21px;
   height: 19px;
   position: absolute;
-  bottom: 30px;
-  right: 18px;
+  top: 18px;
+  right: 15px;
+}
+
+.photo-card__like:hover {
+  transform: scale(1.05);
 }

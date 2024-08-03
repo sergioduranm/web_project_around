@@ -38,64 +38,15 @@
         </section>
 
         <section class="photo-cards">
-          <div class="photo-card">
-            <img
-              class="photo-card__image"
-              src="./images/yosemit.png"
-              alt="Valle de Yosemite"
-            />
-            <div class="photo-card__title">
-              Valle de Yosemite Yosemite Yosemite
+          <!-- Cards template -->
+          <template id="photo-card-template">
+            <div class="photo-card">
+              <img class="photo-card__image" src="" alt="" />
+              <div class="photo-card__title"></div>
+              <button class="photo-card__delete"></button>
+              <button class="photo-card__like"></button>
             </div>
-            <button class="photo-card__like"></button>
-          </div>
-          <div class="photo-card">
-            <img
-              class="photo-card__image"
-              src="./images/louise.png"
-              alt="Lago Louise"
-            />
-            <div class="photo-card__title">Lago Louise</div>
-            <button class="photo-card__like"></button>
-          </div>
-          <div class="photo-card">
-            <img
-              class="photo-card__image"
-              src="./images/montanas-calvas.png"
-              alt="Montañas Calvas"
-            />
-            <div class="photo-card__title">Montañas Calvas</div>
-            <button class="photo-card__like"></button>
-          </div>
-          <div class="photo-card">
-            <img
-              class="photo-card__image"
-              src="./images/latemar.png"
-              alt="Latemar"
-            />
-            <div class="photo-card__title">Latemar</div>
-            <button class="photo-card__like"></button>
-          </div>
-          <div class="photo-card">
-            <img
-              class="photo-card__image"
-              src="./images/national-park.png"
-              alt="Vanois National"
-            />
-            <div class="photo-card__title">
-              Vanois National Park and something more
-            </div>
-            <button class="photo-card__like"></button>
-          </div>
-          <div class="photo-card">
-            <img
-              class="photo-card__image"
-              src="./images/di-braies.png"
-              alt="Lago di Braies"
-            />
-            <div class="photo-card__title">Lago di Braies</div>
-            <button class="photo-card__like"></button>
-          </div>
+          </template>
         </section>
       </main>
       <footer class="footer">
@@ -135,6 +86,7 @@
         </form>
       </div>
     </div>
-    <script src="./scripts.js"></script>
+    <script src="./scripts/cards.js"></script>
+    <script src="./scripts/profile.js"></script>
   </body>
 </html>
