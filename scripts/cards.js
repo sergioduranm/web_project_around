@@ -50,10 +50,10 @@ function createCard(card) {
     event.target.closest(".photo-card").remove();
   }
   deleteButton.addEventListener("click", deleteCard);
+  return cardElement;
 }
 
 cardsArray.forEach(createCard);
-
 
 // abrir el modal
 // El usuario escribe datos en el modal
@@ -61,6 +61,5 @@ cardsArray.forEach(createCard);
 // Se capturan los valores de los inputs
 // Se agrega a el array de cardsArray los datos del modal al inicio
 // se agrega al inicio del array la nueva card usando el template
-
 
 // listo las constantes con las que voy a trabajar
