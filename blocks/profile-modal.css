@@ -1,4 +1,4 @@
-.profile-modal {
+.modal {
   display: none;
   position: fixed;
   z-index: 1000;
@@ -11,7 +11,7 @@
   align-items: center;
 }
 
-.profile-modal_opened {
+.modal_opened {
   display: flex;
   position: fixed;
   z-index: 1000;
@@ -24,7 +24,7 @@
   align-items: center;
 }
 
-.profile-modal__content {
+.modal__content {
   background-color: #ffffff;
   padding: 34px;
   border-radius: 10px;
@@ -35,7 +35,7 @@
   position: relative;
 }
 
-.profile-modal__close-btn {
+.modal__close-btn {
   position: absolute;
   top: -47px;
   right: 20px;
@@ -47,7 +47,7 @@
   cursor: pointer;
 }
 
-.profile-modal__title {
+.modal__title {
   margin-bottom: 54px;
   font-size: 24px;
   font-weight: bold;
@@ -55,22 +55,22 @@
 }
 
 /* Estilos del Formulario del Modal */
-.profile-modal__form {
+.modal__form {
   display: flex;
   flex-direction: column;
 }
 
-.profile-modal__form-group {
+.modal__form-group {
   margin-bottom: 15px;
 }
 
-.profile-modal__label {
+.modal__label {
   margin-bottom: 5px;
   font-weight: bold;
-  display: none; /* Ocultamos las etiquetas ya que usamos placeholders */
+  display: none;
 }
 
-.profile-modal__input {
+.modal__input {
   width: 100%;
   padding: 10px 0;
   border: none;
@@ -78,11 +78,11 @@
   background-color: #ffffff;
 }
 
-.profile-modal__input::placeholder {
+.modal__input::placeholder {
   color: #999;
 }
 
-.profile-modal__submit-btn {
+.modal__submit-btn {
   padding: 10px 20px;
   background-color: #ffffff;
   color: #c4c4c4;
@@ -93,7 +93,7 @@
 }
 
 @media (max-width: 600px) {
-  .profile-modal__content {
+  .modal__content {
     width: 90%;
   }
 }

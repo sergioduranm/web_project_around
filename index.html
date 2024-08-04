@@ -53,40 +53,73 @@
         <p class="footer__text">© 2021 Around The U.S.</p>
       </footer>
     </div>
-    <div class="profile-modal" id="profileModal">
-      <div class="profile-modal__content">
-        <button class="profile-modal__close-btn" id="closeProfileModalBtn">
+    <!-- Modal general -->
+    <div class="modal" id="Modal">
+      <div class="modal__content">
+        <button class="modal__close-btn" id="closeModalBtn">
           <img src="./images/Close-Icon.png" alt="close" />
         </button>
-        <h2 class="profile-modal__title">Editar perfil</h2>
-        <form class="profile-modal__form">
-          <div class="profile-modal__form-group">
-            <label for="name" class="profile-modal__label">Nombre</label>
+        <h2 class="modal__title">Editar perfil</h2>
+        <form class="modal__form">
+          <div class="modal__form-group">
+            <label for="name" class="modal__label">Nombre</label>
             <input
               type="text"
-              id="name"
-              name="name"
-              class="profile-modal__input"
+              id="inputOne"
+              name="inputOne"
+              class="modal__input"
               placeholder="Nombre"
             />
           </div>
-          <div class="profile-modal__form-group">
-            <label for="about" class="profile-modal__label">Acerca de mí</label>
+          <div class="modal__form-group">
+            <label for="about" class="modal__label">Acerca de mí</label>
             <input
               type="text"
-              id="about"
-              name="about"
-              class="profile-modal__input"
+              id="inputTwo"
+              name="inputTwo"
+              class="modal__input"
               placeholder="Acerca de mí"
             />
           </div>
-          <button type="submit" class="profile-modal__submit-btn">
-            Guardar
-          </button>
+          <button type="submit" class="modal__submit-btn">Guardar</button>
         </form>
       </div>
     </div>
+    <!-- modal template -->
+    <template id="modal-template">
+      <div class="modal" id="Modal">
+        <div class="modal__content">
+          <button class="modal__close-btn" id="closeModalBtn">
+            <img src="./images/Close-Icon.png" alt="close" />
+          </button>
+          <h2 class="modal__title">Editar perfil</h2>
+          <form class="modal__form">
+            <div class="modal__form-group">
+              <label for="name" class="modal__label">Nombre</label>
+              <input
+                type="text"
+                id="inputOne"
+                name="inputOne"
+                class="modal__input"
+                placeholder="Nombre"
+              />
+            </div>
+            <div class="modal__form-group">
+              <label for="about" class="modal__label">Acerca de mí</label>
+              <input
+                type="text"
+                id="inputTwo"
+                name="inputTwo"
+                class="modal__input"
+                placeholder="Acerca de mí"
+              />
+            </div>
+            <button type="submit" class="modal__submit-btn">Guardar</button>
+          </form>
+        </div>
+      </div>
+    </template>
     <script src="./scripts/cards.js"></script>
-    <script src="./scripts/profile.js"></script>
+    <script src="./scripts/profile-modal.js"></script>
   </body>
 </html>
