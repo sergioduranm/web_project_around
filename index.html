@@ -38,7 +38,6 @@
         </section>
 
         <section class="photo-cards">
-          <!-- Cards template -->
           <template id="photo-card-template">
             <div class="photo-card">
               <img class="photo-card__image" src="" alt="" />
@@ -87,7 +86,24 @@
         </div>
       </div>
     </template>
+    <!-- pop-up de imagenes -->
+    <template id="pop-up-imagen-template">
+      <div class="pop-up-imagen" id="pop-up-imagen">
+        <div class="pop-up-imagen__container">
+          <button class="pop-up-imagen__close-btn" id="popUpImagenCloseBtn">
+            <img src="./images/Close-Icon.png" alt="close" />
+          </button>
+          <img
+            src="https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/yosemite.jpg"
+            alt=""
+            class="pop-up-imagen_photo"
+          />
+          <h2 class="pop-up-imagen__name">nombre de imagen</h2>
+        </div>
+      </div>
+    </template>
     <script src="./scripts/cards.js"></script>
     <script src="./scripts/modal.js"></script>
+    <script src="./scripts/pop-up-imagen.js"></script>
   </body>
 </html>
