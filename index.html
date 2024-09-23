@@ -52,40 +52,25 @@
         <p class="footer__text">© 2021 Around The U.S.</p>
       </footer>
     </div>
-    <!-- modal template -->
+
     <template id="modal-template">
       <div class="modal" id="Modal">
         <div class="modal__content">
           <button class="modal__close-btn" id="closeModalBtn">
             <img src="./images/Close-Icon.png" alt="close" />
           </button>
-          <h2 class="modal__title">Editar perfil</h2>
-          <form class="modal__form">
-            <div class="modal__form-group">
-              <label for="name" class="modal__label">Nombre</label>
-              <input
-                type="text"
-                id="inputOne"
-                name="inputOne"
-                class="modal__input"
-                placeholder="Nombre"
-              />
-            </div>
-            <div class="modal__form-group">
-              <label for="about" class="modal__label">Acerca de mí</label>
-              <input
-                type="text"
-                id="inputTwo"
-                name="inputTwo"
-                class="modal__input"
-                placeholder="Acerca de mí"
-              />
+          <h2 class="modal__title">Título del Modal</h2>
+          <form class="modal__form" novalidate>
+            <!-- Contenedor para los inputs dinámicos -->
+            <div class="modal__inputs">
+              <!-- Los inputs serán generados aquí -->
             </div>
             <button type="submit" class="modal__submit-btn">Guardar</button>
           </form>
         </div>
       </div>
     </template>
+
     <!-- pop-up de imagenes -->
     <template id="pop-up-imagen-template">
       <div class="pop-up-imagen" id="pop-up-imagen">

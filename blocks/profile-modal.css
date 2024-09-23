@@ -35,6 +35,14 @@
   position: relative;
 }
 
+.modal__error {
+  display: block;
+  color: #ff0000;
+  font-size: 12px;
+  height: 15px;
+  margin-top: 5px;
+}
+
 .modal__close-btn {
   position: absolute;
   top: -47px;
@@ -84,12 +92,20 @@
 
 .modal__submit-btn {
   padding: 10px 20px;
+  background-color: #000000;
+  color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 0;
+  cursor: pointer;
+}
+
+.modal__submit-btn_disabled {
+  padding: 10px 20px;
   background-color: #ffffff;
   color: #c4c4c4;
   border: 1px solid #ccc;
   border-radius: 0;
   cursor: pointer;
-  margin-top: 48px;
 }
 
 @media (max-width: 600px) {

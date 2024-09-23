@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
     "pop-up-imagen-template"
   ).content;
   const body = document.body;
-  const photoCardsContainer = document.querySelector(".photo-cards"); // Asegúrate de que el contenedor tiene esta clase
+  const photoCardsContainer = document.querySelector(".photo-cards"); 
 
   // Función para abrir el pop-up con la imagen seleccionada
   function openImagePopUp(imageSrc, imageName) {
