@@ -91,88 +91,6 @@ function createInputs(modalElement, inputsData) {
   return inputs;
 }
 
-// Función para configurar los event listeners
-function setupEventListeners(modalElement, inputs, submitCallback) {
-  const closeButton = modalElement.querySelector("#closeModalBtn");
-  const modalForm = modalElement.querySelector(".modal__form");
-  const submitBtn = modalElement.querySelector(".modal__submit-btn");
-
-  // Función para mostrar el mensaje de error
-  function showInputError(formElement, inputElement) {
-    const errorElement = formElement.querySelector(`#${inputElement.id}-error`);
-    inputElement.classList.add("modal__input_type_error");
-    errorElement.textContent = inputElement.validationMessage;
-    errorElement.classList.add("modal__error_visible");
-  }
-
-  // Función para ocultar el mensaje de error
-  function hideInputError(formElement, inputElement) {
-    const errorElement = formElement.querySelector(`#${inputElement.id}-error`);
-    inputElement.classList.remove("modal__input_type_error");
-    errorElement.classList.remove("modal__error_visible");
-    errorElement.textContent = "";
-  }
-
-  // Función para validar cada input
-  function checkInputValidity(formElement, inputElement) {
-    if (!inputElement.validity.valid) {
-      showInputError(formElement, inputElement);
-    } else {
-      hideInputError(formElement, inputElement);
-    }
-  }
-
-  // Función para verificar si hay algún input inválido
-  function hasInvalidInput(inputs) {
-    return inputs.some((inputElement) => !inputElement.validity.valid);
-  }
-
-  // Función para controlar el estado del botón submit
-  function toggleButtonState(inputs, submitButton) {
-    if (hasInvalidInput(inputs)) {
-      submitButton.classList.add("modal__submit-btn_disabled");
-      submitButton.disabled = true;
-    } else {
-      submitButton.classList.remove("modal__submit-btn_disabled");
-      submitButton.disabled = false;
-    }
-  }
-
-  // Añadir eventos a los inputs
-  inputs.forEach((input) => {
-    input.addEventListener("input", () => {
-      checkInputValidity(modalForm, input);
-      toggleButtonState(inputs, submitBtn);
-    });
-  });
-
-  // Controlar el estado inicial del botón submit
-  toggleButtonState(inputs, submitBtn);
-
-  // Evento para el submit del formulario
-  modalForm.addEventListener("submit", function (event) {
-    event.preventDefault();
-
-    // Validar todos los inputs antes de enviar
-    let allValid = true;
-    inputs.forEach((input) => {
-      checkInputValidity(modalForm, input);
-      if (!input.validity.valid) {
-        allValid = false;
-      }
-    });
-
-    if (allValid) {
-      const formData = inputs.map((input) => input.value);
-      submitCallback(...formData);
-      closeModal(modalElement);
-    }
-  });
-
-  // Evento para cerrar el modal
-  closeButton.addEventListener("click", () => closeModal(modalElement));
-}
-
 // agregar event listener para cerrar con click fuera de modal y con tecla esc
 document.addEventListener("click", function (event) {
   if (event.target.classList.contains("modal_opened")) {
@@ -272,3 +190,118 @@ openProfileButton.addEventListener("click", function () {
     updateProfile
   );
 });
+
+// pop up new cards
+
+document.addEventListener("DOMContentLoaded", () => {
+  // Definir constantes
+  const popUpTemplate = document.getElementById(
+    "pop-up-imagen-template"
+  ).content;
+  const body = document.body;
+  const photoCardsContainer = document.querySelector(".photo-cards");
+
+  // Función para abrir el pop-up con la imagen seleccionada
+  function openImagePopUp(imageSrc, imageName) {
+    // Clonar el contenido del template
+    const popUpClone = popUpTemplate.cloneNode(true);
+
+    // Seleccionar elementos dentro del pop-up clonado
+    const popUp = popUpClone.querySelector(".pop-up-imagen");
+    const popUpImage = popUpClone.querySelector(".pop-up-imagen_photo");
+    const popUpName = popUpClone.querySelector(".pop-up-imagen__name");
+    const popUpCloseBtn = popUpClone.querySelector(".pop-up-imagen__close-btn");
+
+    // Configurar la imagen y el nombre
+    popUpImage.src = imageSrc;
+    popUpName.textContent = imageName;
+
+    // Función para cerrar el pop-up
+    function closePopUp() {
+      popUp.remove();
+    }
+
+    // Agregar evento de cierre al botón de cierre
+    popUpCloseBtn.addEventListener("click", closePopUp);
+
+    // Agregar el pop-up clonado al cuerpo del documento
+    body.appendChild(popUp);
+
+    // Abrir el pop-up
+    popUp.classList.add("pop-up-imagen_opened");
+
+    console.log("Pop-up opened with image:", imageSrc, "and name:", imageName);
+  }
+
+  // Delegación de eventos para manejar clicks en imágenes
+  photoCardsContainer.addEventListener("click", (event) => {
+    const image = event.target.closest(".photo-card__image");
+    if (image) {
+      const imageSrc = image.src;
+      const imageCard = image.closest(".photo-card");
+      const imageName =
+        imageCard.querySelector(".photo-card__title").textContent ||
+        "Nombre de imagen";
+      openImagePopUp(imageSrc, imageName);
+    }
+  });
+});
+
+// Cards
+
+// Variables y constantes
+const cardsArray = [
+  {
+    name: "Valle de Yosemite",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/yosemite.jpg",
+  },
+  {
+    name: "Lago Louise",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/lake-louise.jpg",
+  },
+  {
+    name: "Montañas Calvas",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/bald-mountains.jpg",
+  },
+  {
+    name: "Latemar",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/latemar.jpg",
+  },
+  {
+    name: "Parque Nacional de la Vanoise",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/vanoise.jpg",
+  },
+  {
+    name: "Lago di Braies",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/lago.jpg",
+  },
+];
+const photoCards = document.querySelector(".photo-cards");
+
+// ------------------------------------------------------------------------------------------------------
+// Funciones
+
+// function y método para createCard
+
+function createCard(card) {
+  const cardTemplate = document.querySelector("#photo-card-template").content;
+  const cardElement = cardTemplate.querySelector(".photo-card").cloneNode(true);
+  cardElement.querySelector(".photo-card__image").src = card.link;
+  cardElement.querySelector(".photo-card__title").textContent = card.name;
+  photoCards.append(cardElement);
+  // like button
+  const likeButton = cardElement.querySelector(".photo-card__like");
+  function likeCard(event) {
+    event.target.classList.toggle("photo-card__like_on");
+  }
+  likeButton.addEventListener("click", likeCard);
+  // delete button
+  const deleteButton = cardElement.querySelector(".photo-card__delete");
+  function deleteCard(event) {
+    event.target.closest(".photo-card").remove();
+  }
+  deleteButton.addEventListener("click", deleteCard);
+  return cardElement;
+}
+
+cardsArray.forEach(createCard);
